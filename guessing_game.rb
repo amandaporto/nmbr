@@ -1,21 +1,26 @@
-numb = rand(100)
-numb_guess = Array.new
-puts "What number am I thinking? Guess a number between 1 and 100."
-guess = gets.chomp.to_f
-numb_guess << guess
+num = rand(100)
+puts num
+guess_array = Array.new
 
-while numb_guess.length < 5
-  if guess < numb
-    puts "Too low! Guess again."
-    guess = gets.chomp.to_f
-    numb_guess << guess
-  elsif guess > numb
-    puts "Too high! Guess again."
-    guess = gets.chomp.to_f
-    numb_guess << guess
-  else guess == numb
+def input(message, array)
+  puts message
+  input_guess = gets.chomp.to_f
+  array << input_guess
+
+  return input_guess
+end
+
+guess = input("What number am I thinking? Guess a number between 1 and 100.", guess_array)
+
+while guess_array.length < 5
+  if guess < num
+    guess = input("Too low! Guess again.", guess_array)
+  elsif guess > num
+    guess = input("Too high! Guess again.", guess_array)
+  else guess == num
     puts "You got it, you mindreader!"
-    break
+    exit
   end
 end
-puts "Sorry, too many guesses."
+
+puts "Sorry, no more tries."
