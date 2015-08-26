@@ -9,5 +9,8 @@ while true
   elsif guess > numb
     puts "Too high! Guess again."
     guess = gets.chomp.to_f
+  else guess == numb
+    puts "You got it, you mindreader!"
+    break
   end
 end
