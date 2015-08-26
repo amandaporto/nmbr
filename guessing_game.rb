@@ -6,5 +6,8 @@ while true
   if guess < numb
     puts "Too low! Guess again."
     guess = gets.chomp.to_f
+  elsif guess > numb
+    puts "Too high! Guess again."
+    guess = gets.chomp.to_f
   end
 end
