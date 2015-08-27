@@ -1,5 +1,4 @@
 num = rand(100)
-puts num
 guess_array = Array.new
 
 def input(message, array)
